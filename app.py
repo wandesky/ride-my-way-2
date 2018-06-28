@@ -1,21 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
-rides = [{'driverID' : '001', 'car-route':'routeA','rideID':'ride001'}, {'driverID' : '002', 'car-route':'routeB','rideID':'ride002'}, {'driverID' : '001', 'car-route':'routeA' ,'rideID':'ride003'}]
+@app.route('/')
+def index():
+    return 'OK!'
 
-@app.route('/', methods=['GET'])
-def test():
-    return jsonify({'message': "I should be displaying the homepage here"})
-
-@app.route('/rides', methods= ['GET'])
-def returnAll():
-    return jsonify({'rides': rides})
-
-@app.route('/rides/<string:rideID>', methods=['GET'])
-def returnOne(rideID):
-    results = [ride for ride in rides if ride['rideID'] == rideID]
-    return jsonify({'ride':results[0]})
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
