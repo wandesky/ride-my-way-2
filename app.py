@@ -12,7 +12,7 @@ def test():
 def returnAll():
     return jsonify({'rides': rides})
 
-@app.route('git sta', methods=['GET'])
+@app.route('/rides/<string:rideID>', methods=['GET'])
 def returnOne(rideID):
     results = [ride for ride in rides if ride['rideID'] == rideID]
     return jsonify({'ride':results[0]})
