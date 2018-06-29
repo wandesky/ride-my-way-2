@@ -7,9 +7,11 @@ rides = [{'driverID' : '001', 'car-route':'routeA','rideID':'ride001'}, {'driver
 @app.route('/', methods=['GET'])
 def test():
     return jsonify(
-        {'version': "You are now running version 1 of the api"},
-        {'You should not be here': "Ideally, you are supposed to access the root page using <host>/api/v1/users/"},
-        {'So why are you seeing this': "This page was made just to let you know the way things are organised around here"}
+
+            {'version': "You are now running version 1 of the api"},
+            {'You should not be here': "Ideally, you are supposed to access the root page using <host>/api/v1/users/"},
+            {'So why are you seeing this': "This page was made just to let you know the way things are organised around here"}
+            
         )
 
 
