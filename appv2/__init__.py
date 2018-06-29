@@ -8,7 +8,7 @@ rides = [{'driverID' : '001', 'car-route':'routeA','rideID':'ride001'}, {'driver
 def test():
     return jsonify(
         {'version': "You are now running version 2 of the api"},
-        {'instruction': "How to use the api"}
+        {'instruction': "How to use the api-Include instructions for using the app"}
         )
 
 @app.route('/api/v2/users/rides', methods= ['GET'])
