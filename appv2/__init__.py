@@ -4,6 +4,14 @@ app = Flask(__name__)
 
 rides = [{'driverID' : '001', 'car-route':'routeA','rideID':'ride001'}, {'driverID' : '002', 'car-route':'routeB','rideID':'ride002'}, {'driverID' : '001', 'car-route':'routeA' ,'rideID':'ride003'}]
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify(
+        {'version': "You are now running version 2 of the api"},
+        {'instruction': "You should not be here: make sure your url conforms with the routes. they usually end in something like /api/v2/users/"}
+        )
+
+
 @app.route('/api/v2/users/', methods=['GET'])
 def test():
     return jsonify(
